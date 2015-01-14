@@ -1,7 +1,7 @@
 {
   "name": "ivm",
   "description": "io.js version manager",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "homepage": "https://github.com/demohi/ivm",
   "bugs": "https://github.com/demohi/ivm/issues",
   "author": "mdemo",

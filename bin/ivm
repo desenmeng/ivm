@@ -78,16 +78,16 @@ display_help() {
   Commands:
 
     ivm                            Output versions installed
-    ivm latest                     Install or activate the latest node release
-    ivm stable                     Install or activate the latest stable node release
-    ivm <version>                  Install node <version>
-    ivm use <version> [args ...]   Execute node <version> with [args ...]
+    ivm latest                     Install or activate the latest iojs release
+    ivm stable                     Install or activate the latest stable iojs release
+    ivm <version>                  Install iojs <version>
+    ivm use <version> [args ...]   Execute iojs <version> with [args ...]
     ivm bin <version>              Output bin path for <version>
     ivm rm <version ...>           Remove the given version(s)
     ivm prev                       Revert to the previously activated version
-    ivm --latest                   Output the latest node version available
-    ivm --stable                   Output the latest stable node version available
-    ivm ls                         Output the versions of node available
+    ivm --latest                   Output the latest iojs version available
+    ivm --stable                   Output the latest stable iojs version available
+    ivm ls                         Output the versions of iojs available
 
   Options:
 
@@ -150,9 +150,9 @@ display_n_version() {
 #
 
 check_current_version() {
-  command -v node &> /dev/null
+  command -v iojs &> /dev/null
   if test $? -eq 0; then
-    active=`node --version`
+    active=`iojs --version`
     active=${active#v}
   fi
 }
@@ -197,7 +197,7 @@ list_versions_installed() {
 }
 
 #
-# Display current node --version and others installed.
+# Display current iojs --version and others installed.
 #
 
 display_versions() {
@@ -348,7 +348,7 @@ install_node() {
   rm -f $dir/n.lock
 
   activate $version
-  log installed $(node --version)
+  log installed $(iojs --version)
   echo
 }
 
@@ -371,7 +371,7 @@ remove_versions() {
 display_bin_path_for_version() {
   test -z $1 && abort "version required"
   local version=${1#v}
-  local bin=$VERSIONS_DIR/$version/bin/node
+  local bin=$VERSIONS_DIR/$version/bin/iojs
   if test -f $bin; then
     printf $bin
   else
@@ -386,7 +386,7 @@ display_bin_path_for_version() {
 execute_with_version() {
   test -z $1 && abort "version required"
   local version=${1#v}
-  local bin=$VERSIONS_DIR/$version/bin/node
+  local bin=$VERSIONS_DIR/$version/bin/iojs
 
   shift # remove version
 
