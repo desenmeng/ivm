@@ -1,0 +1,36 @@
+{
+  "name": "ivm",
+  "description": "io.js version manager",
+  "version": "0.1.1",
+  "homepage": "https://github.com/demohi/ivm",
+  "bugs": "https://github.com/demohi/ivm/issues",
+  "author": "mdemo",
+  "keywords": [
+    "nvm",
+    "node",
+    "version",
+    "manager",
+    "switcher",
+    "node",
+    "binary",
+    "env",
+    "io.js",
+    "io",
+    "ivm"
+  ],
+  "bin": {
+    "ivm": "./bin/ivm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/demohi/ivm.git"
+  },
+  "preferGlobal": true,
+  "os": [
+    "!win32"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "license": "MIT"
+}
