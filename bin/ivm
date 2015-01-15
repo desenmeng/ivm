@@ -6,7 +6,7 @@
 
 VERSION="0.1.0"
 N_PREFIX=${N_PREFIX-/usr/local}
-VERSIONS_DIR=$N_PREFIX/n/versions
+VERSIONS_DIR=$N_PREFIX/ivm/versions
 UP=$'\033[A'
 DOWN=$'\033[B'
 N_MIRROR=${N_MIRROR-https://iojs.org/dist/}
@@ -321,7 +321,7 @@ install_node() {
   local url=$(tarball_url $version)
 
   if test -d $dir; then
-    if [[ ! -e $dir/n.lock ]] ; then
+    if [[ ! -e $dir/ivm.lock ]] ; then
       activate $version
       exit
     fi
@@ -337,7 +337,7 @@ install_node() {
   if [ $? -ne 0 ] ; then
     abort "sudo required"
   else
-    touch $dir/n.lock
+    touch $dir/ivm.lock
   fi
 
   cd $dir
@@ -345,7 +345,7 @@ install_node() {
   log fetch $url
   curl -L# $url | tar -zx --strip 1
   erase_line
-  rm -f $dir/n.lock
+  rm -f $dir/ivm.lock
 
   activate $version
   log installed $(iojs --version)
