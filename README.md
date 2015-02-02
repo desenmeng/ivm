@@ -1,3 +1,5 @@
+# [nvm](https://github.com/creationix/nvm) has supported io.js, nvm is a better choice to manage multiple active node.js&io.js versions
+
 # ivm
 
 This repository began as a GitHub fork of [tj/n](https://github.com/tj/n).
